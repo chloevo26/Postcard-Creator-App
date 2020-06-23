@@ -147,6 +147,7 @@ function sendMediaStore(filename, serverRequest, serverResponse) {
                         serverResponse.send(" Media server says: " + body);
                     } else {
                         serverResponse.status(200);
+                        console.log(body)
                         serverResponse.send(body);
                     }
                     fs.unlink(__dirname + "/images/" + filename, (err) => {
