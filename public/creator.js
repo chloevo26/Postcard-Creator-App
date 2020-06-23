@@ -61,8 +61,8 @@ function sharePostcard() {
             console.log("Share post card", xhr.responseText)
             document.querySelector(".overlay").classList.remove("closeDissappear");
             document.querySelector(".overlay").classList.add("showOverlay");
-            document.getElementById("displayLink").href = 'display.html?id=' + xhr.responseText;
-            document.getElementById("displayLink").textContent = 'display.html?id=' + xhr.responseText;
+            document.getElementById("displayLink").href = 'https://tranquil-wildwood-07126.herokuapp.com/display.html?id=' + xhr.responseText;
+            document.getElementById("displayLink").textContent = 'https://tranquil-wildwood-07126.herokuapp.com/display.html?id=' + xhr.responseText;
         }
     }
     // pass `params` to `send()` method
