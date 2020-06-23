@@ -1,0 +1,386 @@
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    margin: 20px 20px 40px 20px;
+    font-family: "Dancing Script";
+    font-size: 40px;
+  }
+  
+  #imageCustom {
+    border-radius: 20px;
+    background-color: #e6e2cf;
+    display: flex;
+    width: 70%;
+    align-self: center;
+    justify-content: center;
+    height: 450px;
+    margin: 20px;
+  }
+  #serverImage {
+    width: 90%;
+    height: 340px;
+    margin-top: 4%;
+    margin-bottom: 5px;
+    margin-left: 10%;
+  }
+  
+  .imageControl {
+    position: relative;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+  
+  #fileChooser {
+    display: none;
+  }
+  
+  #controls {
+    border: 1px dashed black;
+    margin: 15px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+  }
+  
+  .replaceLabel {
+    position: absolute;
+    background-color: transparent;
+    border: 2px solid black;
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    left: 36%;
+    top: 88%;
+    display: none;
+    margin-top: 5px;
+  }
+  .messageControl {
+    width: 50%;
+    margin: 3px;
+    display: flex;
+    justify-self: center;
+  }
+  #textInput {
+    flex: 1;
+    align-content: flex-start;
+    border-left: 2px solid black;
+    padding: 0 0 40px 5px;
+  }
+  
+  .messageControl > textarea {
+    margin: 12px 15px 15px 0;
+    height: 80%;
+    background-color: transparent;
+    border: none;
+    font-family: "Dancing Script";
+    font-size: 24px;
+    width: 100%;
+  }
+  ::placeholder {
+    font-size: 20px;
+  }
+  
+  #sharing-btn > button {
+    background-color: white;
+    border: 2px solid black;
+    padding: 15px 15px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  ul {
+    list-style: none;
+    padding: 10px;
+  }
+  li {
+    margin: 3px;
+  }
+  #fonts:first-child > span {
+    content: "\2756";
+  }
+  #indie {
+    font-family: "Indie Flower";
+  }
+  #dancing {
+    font-family: "Dancing Script";
+  }
+  #longCang {
+    font-family: "Long Cang";
+  }
+  #apple {
+    font-family: "Homemade Apple";
+  }
+  .squares {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+  }
+  #square1 {
+    background-color: #e6e2cf;
+  }
+  #square2 {
+    background-color: #dbcaac;
+  }
+  #square3 {
+    background-color: #c9cbb3;
+  }
+  #square4 {
+    background-color: #bbc9ca;
+  }
+  #square5 {
+    background-color: #a6a5b5;
+  }
+  #square6 {
+    background-color: #b5a6ab;
+  }
+  #square7 {
+    background-color: #eccfcf;
+  }
+  #square8 {
+    background-color: #eceeeb;
+  }
+  #square9 {
+    background-color: #bab9b5;
+  }
+  
+  #customize {
+    display: flex;
+    width: 70%;
+    align-self: center;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  .customize-font {
+    min-width: 0;
+  }
+  .customize-color {
+    flex-basis: 60%;
+    min-width: 0;
+  }
+  #sharing-btn {
+    min-width: 0;
+  }
+  .colors {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 40px 40px 40px 40px 40px;
+    grid-gap: 10px;
+    width: 90%;
+  }
+  .squares {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+  }
+  
+  .squares:hover {
+    cursor: pointer;
+    border: 1px dashed black;
+  }
+  .squaresSelected {
+    border: 2px solid black;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: none;
+  }
+  .showOverlay {
+    display: block;
+  }
+  #popUp {
+    width: 700px;
+    height: 300px;
+    line-height: 200px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11;
+    line-height: 16px;
+    font-size: 20px;
+  }
+  
+  #popUp > p {
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 60px;
+  }
+  
+  .close {
+    background: none;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    left: 94%;
+    top: 5%;
+  }
+  .close:after {
+    content: "";
+    height: 40px;
+    border-left: 6px solid #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 28px;
+  }
+  .close:before {
+    content: "";
+    height: 40px;
+    border-left: 6px solid #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 28px;
+  }
+  .closeDissappear {
+    display: none;
+  }
+  
+  @media (max-width: 1000px) {
+    .replaceLabel {
+      left: 30%;
+      padding: 8px 20px;
+    }
+    #serverImage {
+      margin-top: 6%;
+    }
+    #popUp {
+      width: 600px;
+      height: 200px;
+    }
+    #displayLink {
+      font-size: 16px;
+    }
+    .close {
+      left: 93%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #customize {
+      width: 90%;
+    }
+    #imageCustom {
+      width: 90%;
+    }
+  
+    #controls {
+      margin-right: 40px;
+    }
+    .replaceLabel {
+      left: 28%;
+      padding: 8px 20px;
+    }
+    #popUp {
+      width: 500px;
+      height: 150px;
+      line-height: 10px;
+    }
+  
+    #popUp > p {
+      margin-top: 40px;
+      font-size: 30px;
+    }
+    #displayLink {
+      font-size: 14px;
+    }
+    .close {
+      left: 90%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #imageCustom {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      align-items: center;
+      height: 50rem;
+    }
+    .imageControl {
+      justify-content: center;
+      border-bottom: 2px solid black;
+      border-right: none;
+      height: 60%;
+      width: 90%;
+    }
+    #controls {
+      margin: 15px;
+    }
+  
+    .messageControl {
+      width: 80%;
+      height: 30%;
+    }
+  
+    .messageControl > textarea {
+      margin: 15px;
+    }
+    #textInput {
+      border-left: none;
+    }
+    #customize {
+      width: 90%;
+      margin: 10px;
+      flex-direction: column;
+    }
+    .colors {
+      width: 100%;
+      display: inline-grid;
+      grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px;
+      grid-gap: 10px;
+    }
+    #serverImage {
+      margin-top: -5%;
+      margin-left: 5%;
+      height: 450px;
+    }
+    .replaceLabel {
+      left: 31%;
+      margin-top: 5px;
+      top: 90%;
+    }
+    #fonts {
+      margin: 0;
+    }
+    #popUp {
+      width: 400px;
+      height: 100px;
+    }
+    #popUp > p {
+      margin-top: 20px;
+      font-size: 25px;
+    }
+    #displayLink {
+      font-size: 12px;
+    }
+    .close {
+      left: 88%;
+    }
+  }
+  
+  
